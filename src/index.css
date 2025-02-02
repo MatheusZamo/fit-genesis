@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
-.test {
-  color: #d0fd3b;
+.border-partial::after {
+  content: "";
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  border-radius: 50%;
+  border: 4px solid #a3ff00; /* Cor da borda */
+  top: -20%;
+  left: -20%;
+  mask-image: conic-gradient(transparent 270deg, black 0deg);
+  -webkit-mask-image: conic-gradient(transparent 270deg, black 0deg);
 }
