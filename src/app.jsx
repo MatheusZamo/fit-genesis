@@ -10,7 +10,7 @@ const App = () => {
               <li className="p-5 " key={link}>
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2  font-semibold text-gray-300 hover:bg-[#d0fd3b] hover:text-black"
+                  className="-mx-3 block rounded-lg px-3 py-2  font-semibold text-gray-300 hover:bg-[#a3ff00] hover:text-black"
                 >
                   {link}
                 </a>
@@ -110,6 +110,71 @@ const App = () => {
               src="about3.jpg"
               className="m-7 w-32 h-32 rounded-full object-cover border-4 border-[#a3ff00]"
             />
+          </div>
+        </div>
+      </div>
+      <div className="bg-black flex flex-col justify-center pt-15">
+        <h2 className="text-white text-[45px] font-semibold text-center">
+          Escolha o plano certo para você
+        </h2>
+        <div className="flex justify-center m-5 flex-wrap">
+          <div className="w-100 h-100  m-5 rounded-xl text-center p-5 border border-white">
+            <p className="text-white text-[25px] font-bold">Plano Fit</p>
+            <p className="text-white text-[40px] font-bold">
+              R$99,90
+              <span className="text-[15px] font-normal text-gray-300">
+                / Mês
+              </span>
+            </p>
+            <ul className="text-white p-3">
+              <li className="p-2 text-gray-400">
+                Acesso ilimitado à musculação e cardio
+              </li>
+              <li className="p-2 text-gray-400">
+                Horários flexíveis para treinar quando quiser
+              </li>
+              <li className="p-2 text-gray-400">
+                Suporte de profissionais para orientação
+              </li>
+              <li className="p-2 text-gray-400">
+                Vestiários equipados e ambiente climatizado
+              </li>
+            </ul>
+            <button
+              href="#"
+              className="rounded-md bg-[#a3ff00] text-black font-semibold mr-5 w-60 h-10 cursor-pointer"
+            >
+              Começar
+            </button>
+          </div>
+          <div className="w-100 h-100 m-5 rounded-xl text-center p-5 border border-white">
+            <p className="text-white text-[25px] font-bold">Plano Premium</p>
+            <p className="text-white text-[40px] font-bold">
+              R$149,90
+              <span className="text-[15px] font-normal text-gray-300">
+                / Mês
+              </span>
+            </p>
+            <ul className="text-white p-3">
+              <li className="p-2 text-gray-400">
+                Todos os benefícios do Plano Fit
+              </li>
+              <li className="p-2 text-gray-400">
+                Aulas coletivas (dança, spinning, funcional)
+              </li>
+              <li className="p-2 text-gray-400">
+                Artes marciais (Muay Thai, Jiu-Jitsu, Boxe)
+              </li>
+              <li className="p-2 text-gray-400">
+                Avaliação física e acompanhamento personalizado
+              </li>
+            </ul>
+            <button
+              href="#"
+              className="rounded-md bg-[#a3ff00] text-black font-semibold  mr-5 w-60 h-10 cursor-pointer"
+            >
+              Começar
+            </button>
           </div>
         </div>
       </div>
