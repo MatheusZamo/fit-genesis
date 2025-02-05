@@ -178,6 +178,33 @@ const App = () => {
           </div>
         </div>
       </div>
+      <footer className="bg-[url(/public/visit.png)] h-180 bg-cover">
+        <h2 className="text-white text-[45px] font-semibold text-center pt-50">
+          Faça sua primeira visita
+        </h2>
+        <p className="mt-10 text-gray-300 font-sans text-xl text-center p-10 ">
+          Venha conhecer nossa academia e aproveite um dia de treino gratuito
+          para testar nossos equipamentos, participar das aulas e sentir a
+          energia do nosso espaço. Sem compromisso, apenas você e o seu melhor
+          treino!
+        </p>
+        <div className="text-center">
+          <label className="sr-only">Email address</label>
+          <input
+            type="email"
+            required
+            placeholder="Seu Email"
+            autoComplete="email"
+            className="w-100 min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-[#a3ff00] sm:text-sm/6"
+          />
+          <button
+            type="submit"
+            className="w-20 flex-none rounded-md bg-[#a3ff00] px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+          >
+            Enviar
+          </button>
+        </div>
+      </footer>
     </>
   )
 }
