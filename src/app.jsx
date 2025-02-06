@@ -1,6 +1,27 @@
-const links = ["Início", "Sobre", "Preço", "Contato"]
+import { useState } from "react"
 
 const App = () => {
+  const [benefit, setBenefit] = useState(1)
+
+  const links = ["Início", "Sobre", "Preço", "Contato"]
+  const benefits = [
+    {
+      title: "Equipamentos de Alta Qualidade",
+      text: "A academia conta com aparelhos modernos para musculação e cardio, garantindo treinos eficientes e seguros para todos os níveis",
+      id: 1,
+    },
+    {
+      title: "Aulas Diversificadas",
+      text: "Modalidades como dança, spinning e treinamento funcional para quem busca um treino dinâmico e motivador.",
+      id: 2,
+    },
+    {
+      title: "Defesa Pessoal",
+      text: "Inclui aulas de Muay Thai, Jiu-Jitsu e Boxe, ideais para quem deseja melhorar a condição física e aprender técnicas de defesa pessoal.",
+      id: 3,
+    },
+  ]
+
   return (
     <>
       <main className="bg-[url(/public/home.jpg)] bg-cover h-dvh">
@@ -50,39 +71,36 @@ const App = () => {
           <h2 className="text-white text-[45px] font-semibold ml-10">
             Por que nos escolher
           </h2>
-          <div className="flex flex-wrap">
+          <ul className="flex flex-wrap">
             <span className="text-white text-[20px] mt-25 pr-5 ">&lt;</span>
-            <div className="bg-[#a3ff00] w-70 m-3 rounded-xl">
-              <h3 className="text-black py-5 pl-5 text-xl font-black">
-                Equipamentos de Alta Qualidade
-              </h3>
-              <p className="text-black-400 px-5 pb-5">
-                A academia conta com aparelhos modernos para musculação e
-                cardio, garantindo treinos eficientes e seguros para todos os
-                níveis.
-              </p>
-            </div>
-            <div className="bg-gray-800 w-70 m-3 rounded-xl">
-              <h3 className="text-white py-5 pl-5 text-xl font-black">
-                Aulas Diversificadas
-              </h3>
-              <p className="text-gray-400 px-5 pb-5">
-                Modalidades como dança, spinning e treinamento funcional para
-                quem busca um treino dinâmico e motivador.
-              </p>
-            </div>
-            <div className="bg-gray-800 w-70 m-3 rounded-xl">
-              <h3 className="text-white py-5 pl-5 text-xl font-black">
-                Defesa Pessoal
-              </h3>
-              <p className="text-gray-400 px-5 pb-5">
-                Inclui aulas de Muay Thai, Jiu-Jitsu e Boxe, ideais para quem
-                deseja melhorar a condição física e aprender técnicas de defesa
-                pessoal.
-              </p>
-            </div>
+            {benefits.map((item) => {
+              const itemClicked = benefit === item.id
+              const backgroundDynamic = itemClicked
+                ? "bg-[#a3ff00]"
+                : "bg-gray-800"
+              const titleColorDynamic = itemClicked
+                ? "text-black"
+                : "text-white"
+              const textColorDynamic = itemClicked
+                ? "text-black-400"
+                : "text-gray-400"
+              return (
+                <li
+                  key={item.id}
+                  className={`${backgroundDynamic} w-70 m-3 rounded-xl cursor-pointer`}
+                  onClick={() => setBenefit(item.id)}
+                >
+                  <h3
+                    className={`${titleColorDynamic} py-5 pl-5 text-xl font-black`}
+                  >
+                    {item.title}
+                  </h3>
+                  <p className={`${textColorDynamic} px-5 pb-5`}>{item.text}</p>
+                </li>
+              )
+            })}
             <span className="text-white text-[20px] pt-25 pl-5">&gt;</span>
-          </div>
+          </ul>
         </div>
       </div>
       <div className="bg-black flex justify-center pt-15">
