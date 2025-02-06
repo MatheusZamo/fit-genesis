@@ -88,7 +88,10 @@ const App = () => {
       <div className="bg-black flex justify-center pt-15">
         <div>
           <h2 className="text-white text-[45px] font-semibold ">Sobre Nós</h2>
-          <img src="about.jpg" className="w-220 h-100 bg-cover rounded-xl" />
+          <img
+            src="about.jpg"
+            className="w-[900px] h-[500px] object-cover rounded-xl"
+          />
           <div className="flex">
             <p className="text-gray-400 w-150 mt-7">
               Com anos de experiência, a{" "}
