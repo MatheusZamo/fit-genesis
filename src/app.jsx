@@ -22,6 +22,20 @@ const App = () => {
     },
   ]
 
+  const nextButton = () => {
+    if (benefit === 3) {
+      return
+    }
+    setBenefit((prev) => prev + 1)
+  }
+
+  const previousButton = () => {
+    if (benefit === 1) {
+      return
+    }
+    setBenefit((prev) => prev - 1)
+  }
+
   return (
     <>
       <main className="bg-[url(/public/home.jpg)] bg-cover h-dvh">
@@ -72,7 +86,12 @@ const App = () => {
             Por que nos escolher
           </h2>
           <ul className="flex flex-wrap">
-            <span className="text-white text-[20px] mt-25 pr-5 ">&lt;</span>
+            <span
+              className="text-white text-[20px] mt-25 pr-5 cursor-pointer"
+              onClick={previousButton}
+            >
+              &lt;
+            </span>
             {benefits.map((item) => {
               const itemClicked = benefit === item.id
               const backgroundDynamic = itemClicked
@@ -99,7 +118,12 @@ const App = () => {
                 </li>
               )
             })}
-            <span className="text-white text-[20px] pt-25 pl-5">&gt;</span>
+            <span
+              className="text-white text-[20px] pt-25 pl-5 cursor-pointer"
+              onClick={nextButton}
+            >
+              &gt;
+            </span>
           </ul>
         </div>
       </div>
