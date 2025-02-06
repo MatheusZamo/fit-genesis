@@ -21,6 +21,30 @@ const App = () => {
       id: 3,
     },
   ]
+  const plans = [
+    {
+      name: "Plano Fit",
+      price: "R$99,90",
+      benefits: [
+        "Acesso ilimitado à musculação e cardio",
+        "Horários flexíveis para treinar quando quiser",
+        "Suporte de profissionais para orientação",
+        "Vestiários equipados e ambiente climatizado",
+      ],
+      id: 1,
+    },
+    {
+      name: "Plano Premium",
+      price: "R$149,90",
+      benefits: [
+        "Todos os benefícios do Plano Fit",
+        "Aulas coletivas (dança, spinning, funcional)",
+        "Artes marciais (Muay Thai, Jiu-Jitsu, Boxe)",
+        "Avaliação física e acompanhamento personalizado",
+      ],
+      id: 2,
+    },
+  ]
 
   const nextButton = () => {
     if (benefit === 3) {
@@ -162,66 +186,38 @@ const App = () => {
         <h2 className="text-white text-[45px] font-semibold text-center">
           Escolha o plano certo para você
         </h2>
-        <div className="flex justify-center m-5 flex-wrap">
-          <div className="w-100 h-100  m-5 rounded-xl text-center p-5 border border-white">
-            <p className="text-white text-[25px] font-bold">Plano Fit</p>
-            <p className="text-white text-[40px] font-bold">
-              R$99,90
-              <span className="text-[15px] font-normal text-gray-300">
-                / Mês
-              </span>
-            </p>
-            <ul className="text-white p-3">
-              <li className="p-2 text-gray-400">
-                Acesso ilimitado à musculação e cardio
+        <ul className="flex justify-center m-5 flex-wrap">
+          {plans.map((plan) => {
+            return (
+              <li
+                className="w-100 h-100  m-5 rounded-xl text-center p-5 border border-white"
+                key={plan.id}
+              >
+                <p className="text-white text-[25px] font-bold">{plan.name}</p>
+                <p className="text-white text-[40px] font-bold">
+                  {plan.price}
+                  <span className="text-[15px] font-normal text-gray-300">
+                    / Mês
+                  </span>
+                </p>
+                <ul className="text-white p-3">
+                  {plan.benefits.map((benefit) => (
+                    <li className="p-2 text-gray-400" key={benefit}>
+                      {" "}
+                      {benefit}
+                    </li>
+                  ))}
+                  <button
+                    href="#"
+                    className="rounded-md bg-[#a3ff00] text-black font-semibold  mr-5 w-60 h-10 cursor-pointer"
+                  >
+                    Começar
+                  </button>
+                </ul>
               </li>
-              <li className="p-2 text-gray-400">
-                Horários flexíveis para treinar quando quiser
-              </li>
-              <li className="p-2 text-gray-400">
-                Suporte de profissionais para orientação
-              </li>
-              <li className="p-2 text-gray-400">
-                Vestiários equipados e ambiente climatizado
-              </li>
-            </ul>
-            <button
-              href="#"
-              className="rounded-md bg-[#a3ff00] text-black font-semibold mr-5 w-60 h-10 cursor-pointer"
-            >
-              Começar
-            </button>
-          </div>
-          <div className="w-100 h-100 m-5 rounded-xl text-center p-5 border border-white">
-            <p className="text-white text-[25px] font-bold">Plano Premium</p>
-            <p className="text-white text-[40px] font-bold">
-              R$149,90
-              <span className="text-[15px] font-normal text-gray-300">
-                / Mês
-              </span>
-            </p>
-            <ul className="text-white p-3">
-              <li className="p-2 text-gray-400">
-                Todos os benefícios do Plano Fit
-              </li>
-              <li className="p-2 text-gray-400">
-                Aulas coletivas (dança, spinning, funcional)
-              </li>
-              <li className="p-2 text-gray-400">
-                Artes marciais (Muay Thai, Jiu-Jitsu, Boxe)
-              </li>
-              <li className="p-2 text-gray-400">
-                Avaliação física e acompanhamento personalizado
-              </li>
-            </ul>
-            <button
-              href="#"
-              className="rounded-md bg-[#a3ff00] text-black font-semibold  mr-5 w-60 h-10 cursor-pointer"
-            >
-              Começar
-            </button>
-          </div>
-        </div>
+            )
+          })}
+        </ul>
       </div>
       <footer className="bg-[url(/public/visit.png)] h-180 bg-cover">
         <h2 className="text-white text-[45px] font-semibold text-center pt-50">
