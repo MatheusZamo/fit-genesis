@@ -104,14 +104,14 @@ const App = () => {
           </div>
         </div>
       </main>
-      <div className="bg-black flex justify-center pt-5">
+      <div className="bg-black flex justify-center sm:pt-10 md:pt-20 lg:pt-5">
         <div>
           <h2 className="text-white text-[45px] font-semibold ml-10">
             Por que nos escolher
           </h2>
-          <ul className="flex flex-wrap">
+          <ul className="flex flex-wrap justify-center">
             <span
-              className="text-white text-[20px] mt-25 pr-5 cursor-pointer"
+              className="text-white text-[20px] mt-25 pr-5 cursor-pointer sm:invisible md:invisible lg:visible"
               onClick={previousButton}
             >
               &lt;
@@ -143,7 +143,7 @@ const App = () => {
               )
             })}
             <span
-              className="text-white text-[20px] pt-25 pl-5 cursor-pointer"
+              className="text-white text-[20px] pt-25 pl-5 cursor-pointer sm:invisible md:invisible lg:visible"
               onClick={nextButton}
             >
               &gt;
@@ -152,11 +152,12 @@ const App = () => {
         </div>
       </div>
       <div className="bg-black flex justify-center pt-15">
-        <div>
-          <h2 className="text-white text-[45px] font-semibold ">Sobre Nós</h2>
+        {/* lg:w-[900px] lg:h-[500px] md:w-[700px] md:h-[400px] sm:w-[300px] sm:h-[350px] */}
+        <div className="lg:w-[900px] lg:h-[800px] md:w-[700px] md:h-[700px] sm:w-[500px] sm:h-[600px]">
+          <h2 className="text-white text-[45px] font-semibold">Sobre Nós</h2>
           <img
             src="about.jpg"
-            className="w-[900px] h-[500px] object-cover rounded-xl"
+            className=" w-[100%] lg:h-[480px] md:h-[350px] sm:h-[250px] object-cover rounded-xl"
           />
           <div className="flex">
             <p className="text-gray-400 w-150 mt-7">
@@ -166,9 +167,9 @@ const App = () => {
               qualificados para ajudar você a alcançar seus objetivos. Venha
               treinar com a gente e evoluir sempre!
             </p>
-            <span className="rounded-md bg-[#a3ff00]  text-black font-semibold m-3 ml-25 mt-9 pt-3 h-[50px] w-[180px] text-center text-[18px]">
+            {/* <span className="rounded-md bg-[#a3ff00]  text-black font-semibold m-3 ml-25 mt-9 pt-3 h-[50px] w-[180px] text-center text-[18px]">
               5 Anos no Mercado
-            </span>
+            </span> */}
           </div>
           <div className="flex justify-center">
             <img
