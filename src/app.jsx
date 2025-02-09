@@ -46,20 +46,6 @@ const App = () => {
     },
   ]
 
-  const nextButton = () => {
-    if (benefit === 3) {
-      return
-    }
-    setBenefit((prev) => prev + 1)
-  }
-
-  const previousButton = () => {
-    if (benefit === 1) {
-      return
-    }
-    setBenefit((prev) => prev - 1)
-  }
-
   return (
     <>
       <main className="bg-[url(/public/home.jpg)] bg-cover h-dvh">
@@ -104,18 +90,12 @@ const App = () => {
           </div>
         </div>
       </main>
-      <div className="bg-black flex justify-center sm:pt-10 md:pt-20 lg:pt-5">
+      <div className="bg-black flex justify-center  md:pt-20 lg:pt-5 @container">
         <div>
-          <h2 className="text-white text-[45px] font-semibold ml-10">
+          <h2 className="text-white text-[45px] font-semibold @sm:pt-[100px] @sm:text-center">
             Por que nos escolher
           </h2>
           <ul className="flex flex-wrap justify-center">
-            <span
-              className="text-white text-[20px] mt-25 pr-5 cursor-pointer sm:invisible md:invisible lg:visible"
-              onClick={previousButton}
-            >
-              &lt;
-            </span>
             {benefits.map((item) => {
               const itemClicked = benefit === item.id
               const backgroundDynamic = itemClicked
@@ -142,22 +122,15 @@ const App = () => {
                 </li>
               )
             })}
-            <span
-              className="text-white text-[20px] pt-25 pl-5 cursor-pointer sm:invisible md:invisible lg:visible"
-              onClick={nextButton}
-            >
-              &gt;
-            </span>
           </ul>
         </div>
       </div>
-      <div className="bg-black flex justify-center pt-15">
-        {/* lg:w-[900px] lg:h-[500px] md:w-[700px] md:h-[400px] sm:w-[300px] sm:h-[350px] */}
-        <div className="lg:w-[900px] lg:h-[800px] md:w-[700px] md:h-[700px] sm:w-[500px] sm:h-[600px]">
+      <div className="bg-black flex justify-center pt-15 @container">
+        <div className="lg:w-[900px] lg:h-[800px] @3xl:w-[700px] @3xl:h-[700px] @sm:w-[350px] @sm:h-[600px] ">
           <h2 className="text-white text-[45px] font-semibold">Sobre Nós</h2>
           <img
             src="about.jpg"
-            className=" w-[100%] lg:h-[480px] md:h-[350px] sm:h-[250px] object-cover rounded-xl"
+            className=" @3xl:w-[100%] @3xl:h-[350px] @sm:h-[250px] object-cover rounded-xl"
           />
           <div className="flex">
             <p className="text-gray-400 w-150 mt-7">
@@ -167,23 +140,20 @@ const App = () => {
               qualificados para ajudar você a alcançar seus objetivos. Venha
               treinar com a gente e evoluir sempre!
             </p>
-            {/* <span className="rounded-md bg-[#a3ff00]  text-black font-semibold m-3 ml-25 mt-9 pt-3 h-[50px] w-[180px] text-center text-[18px]">
-              5 Anos no Mercado
-            </span> */}
           </div>
           <div className="flex justify-center">
             <img
               src="about2.jpg"
-              className="m-7 w-32 h-32 rounded-full object-cover border-4 border-[#a3ff00]"
+              className="m-7 w-30 h-30 rounded-full object-cover border-4 border-[#a3ff00]"
             />
             <img
               src="about3.jpg"
-              className="m-7 w-32 h-32 rounded-full object-cover border-4 border-[#a3ff00]"
+              className="m-7 w-30 h-30 rounded-full object-cover border-4 border-[#a3ff00]"
             />
           </div>
         </div>
       </div>
-      <div className="bg-black flex flex-col justify-center pt-15">
+      <div className="bg-black flex flex-col justify-center pt-15 @container">
         <h2 className="text-white text-[45px] font-semibold text-center">
           Escolha o plano certo para você
         </h2>
@@ -191,7 +161,7 @@ const App = () => {
           {plans.map((plan) => {
             return (
               <li
-                className="w-100 h-100  m-5 rounded-xl text-center p-5 border border-white"
+                className=" @sm:w-100 @sm:h-115 @3xl:h-100  m-5 rounded-xl text-center p-5 border border-white "
                 key={plan.id}
               >
                 <p className="text-white text-[25px] font-bold">{plan.name}</p>
@@ -237,7 +207,7 @@ const App = () => {
             required
             placeholder="Seu Email"
             autoComplete="email"
-            className="w-100 min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-[#a3ff00] sm:text-sm/6"
+            className="w-70 min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-[#a3ff00] sm:text-sm/6"
           />
           <button
             type="submit"
