@@ -48,7 +48,7 @@ const App = () => {
 
   return (
     <>
-      <main className="bg-[url(/public/home.jpg)] bg-cover h-dvh">
+      <main className="bg-[url(/public/home.jpg)] bg-cover h-dvh bg-center">
         <nav className="flex justify-center">
           <ul className="flex justify-center">
             {links.map((link) => (
@@ -90,9 +90,9 @@ const App = () => {
           </div>
         </div>
       </main>
-      <div className="bg-black flex justify-center  md:pt-20 lg:pt-5 @container">
+      <div className="bg-black flex justify-center  md:pt-15 lg:pt-5 sm:pt-10 @container">
         <div>
-          <h2 className="text-white text-[45px] font-semibold @sm:pt-[100px] @sm:text-center">
+          <h2 className="text-white text-[45px] font-semibold  @sm:text-center">
             Por que nos escolher
           </h2>
           <ul className="flex flex-wrap justify-center">
@@ -180,7 +180,7 @@ const App = () => {
                   ))}
                   <button
                     href="#"
-                    className="rounded-md bg-[#a3ff00] text-black font-semibold  mr-5 w-60 h-10 cursor-pointer"
+                    className="rounded-md bg-[#a3ff00] text-black font-semibold w-60 h-10 cursor-pointer"
                   >
                     Começar
                   </button>
@@ -190,8 +190,8 @@ const App = () => {
           })}
         </ul>
       </div>
-      <footer className="bg-[url(/public/visit.png)] h-180 bg-cover">
-        <h2 className="text-white text-[45px] font-semibold text-center pt-50">
+      <footer className="bg-[url(/public/visit.png)] h-180 bg-cover bg-right @container">
+        <h2 className="text-white text-[45px] font-semibold text-center @sm:pt-10 @md:pt-40 @lg:pt-50">
           Faça sua primeira visita
         </h2>
         <p className="mt-10 text-gray-300 font-sans text-xl text-center p-10 ">
