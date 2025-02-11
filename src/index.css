@@ -14,3 +14,7 @@
   background: #a3ff00;
   border-radius: 10px;
 }
+
+html {
+  scroll-behavior: smooth;
+}

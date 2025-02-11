@@ -19,7 +19,12 @@ const textGoingDown = {
 const App = () => {
   const [benefit, setBenefit] = useState(1)
 
-  const links = ["Início", "Sobre", "Preço", "Contato"]
+  const links = [
+    { name: "Início", for: "home" },
+    { name: "Sobre", for: "about" },
+    { name: "Preço", for: "price" },
+    { name: "Contato", for: "visit" },
+  ]
   const benefits = [
     {
       title: "Equipamentos de Alta Qualidade",
@@ -64,7 +69,10 @@ const App = () => {
 
   return (
     <>
-      <main className="bg-[url(/public/home.jpg)] bg-cover h-dvh bg-center">
+      <main
+        id="home"
+        className="bg-[url(/public/home.jpg)] bg-cover h-dvh bg-center"
+      >
         <nav className="flex justify-center">
           <ul className="flex justify-center">
             {links.map((link) => (
@@ -77,10 +85,10 @@ const App = () => {
               >
                 <motion.a
                   whileTap={{ scale: 0.65 }}
-                  href="#"
+                  href={`#${link.for}`}
                   className="-mx-3 block rounded-lg px-3 py-2  font-semibold text-gray-300 hover:bg-[#a3ff00] hover:text-black"
                 >
-                  {link}
+                  {link.name}
                 </motion.a>
               </motion.li>
             ))}
@@ -105,14 +113,14 @@ const App = () => {
           <div className="mt-5 flex justify-center">
             <motion.a
               whileTap={{ scale: 0.65, background: "#578508" }}
-              href="#"
+              href="#visit"
               className="rounded-md bg-[#a3ff00] px-3.5 py-2.5 text-black font-semibold m-3 mr-5"
             >
               Começar
             </motion.a>
             <motion.a
               whileTap={{ scale: 0.65 }}
-              href="#"
+              href="#about"
               className="text-sm/6 font-semibold text-white m-3 pt-2 ml-5"
             >
               Sobre Nós <span aria-hidden="true">→</span>
@@ -120,7 +128,10 @@ const App = () => {
           </div>
         </motion.div>
       </main>
-      <div className="bg-black flex justify-center  md:pt-15 lg:pt-5 sm:pt-10 @container">
+      <div
+        id="about"
+        className="bg-black flex justify-center  md:pt-15 lg:pt-5 sm:pt-10 @container"
+      >
         <motion.div
           initial={{ scale: 0 }}
           whileInView={{
@@ -210,7 +221,10 @@ const App = () => {
           </motion.div>
         </div>
       </div>
-      <div className="bg-black flex flex-col justify-center pt-15 @container">
+      <div
+        id="price"
+        className="bg-black flex flex-col justify-center pt-15 @container"
+      >
         <h2 className="text-white text-[45px] font-semibold text-center">
           Escolha o plano certo para você
         </h2>
@@ -244,7 +258,7 @@ const App = () => {
                   ))}
                   <motion.button
                     whileTap={{ scale: 0.65, background: "#578508" }}
-                    href="#"
+                    href="#visit"
                     className="rounded-md bg-[#a3ff00] text-black font-semibold w-60 h-10 cursor-pointer "
                   >
                     Começar
@@ -255,7 +269,10 @@ const App = () => {
           })}
         </ul>
       </div>
-      <footer className="bg-[url(/public/visit.png)] h-180 bg-cover bg-right @container">
+      <footer
+        id="visit"
+        className="bg-[url(/public/visit.png)] h-180 bg-cover bg-right @container"
+      >
         <h2 className="text-white text-[45px] font-semibold text-center @sm:pt-10 @md:pt-40 @lg:pt-50">
           Faça sua primeira visita
         </h2>
