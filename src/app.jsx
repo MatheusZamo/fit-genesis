@@ -77,7 +77,7 @@ const App = () => {
           <div className="mt-5 flex justify-center">
             <a
               href="#"
-              className="rounded-md bg-[#a3ff00] px-3.5 py-2.5 text-black font-semibold m-3 mr-5"
+              className="rounded-md bg-[#a3ff00] px-3.5 py-2.5 text-black font-semibold m-3 mr-5 hover:bg-[#578508]"
             >
               Começar
             </a>
@@ -180,7 +180,7 @@ const App = () => {
                   ))}
                   <button
                     href="#"
-                    className="rounded-md bg-[#a3ff00] text-black font-semibold w-60 h-10 cursor-pointer"
+                    className="rounded-md bg-[#a3ff00] text-black font-semibold w-60 h-10 cursor-pointer hover:bg-[#578508]"
                   >
                     Começar
                   </button>
@@ -211,7 +211,7 @@ const App = () => {
           />
           <button
             type="submit"
-            className="w-20 flex-none rounded-md bg-[#a3ff00] px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+            className="w-20 flex-none rounded-md bg-[#a3ff00] px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs hover:bg-[#578508] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 cursor-pointer"
           >
             Enviar
           </button>
