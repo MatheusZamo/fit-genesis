@@ -1,4 +1,20 @@
 import { useState } from "react"
+import { motion } from "motion/react"
+
+const textGoingDown = {
+  initial: {
+    y: -500,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.1,
+    },
+  },
+}
 
 const App = () => {
   const [benefit, setBenefit] = useState(1)
@@ -52,18 +68,30 @@ const App = () => {
         <nav className="flex justify-center">
           <ul className="flex justify-center">
             {links.map((link) => (
-              <li className="p-5 " key={link}>
-                <a
+              <motion.li
+                initial="initial"
+                animate="animate"
+                variants={textGoingDown}
+                className="p-5 "
+                key={link}
+              >
+                <motion.a
+                  whileTap={{ scale: 0.65 }}
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2  font-semibold text-gray-300 hover:bg-[#a3ff00] hover:text-black"
                 >
                   {link}
-                </a>
-              </li>
+                </motion.a>
+              </motion.li>
             ))}
           </ul>
         </nav>
-        <div className="text-center mt-30">
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={textGoingDown}
+          className="text-center mt-30"
+        >
           <h1 className="text-5xl font-sans font-black tracking-tight text-balance text-white sm:text-7xl font-stretch-extra-condensed">
             Corpo em Transformação <br /> Vida mais Forte
           </h1>
@@ -75,23 +103,33 @@ const App = () => {
             vida mais saudável e feliz.
           </p>
           <div className="mt-5 flex justify-center">
-            <a
+            <motion.a
+              whileTap={{ scale: 0.65, background: "#578508" }}
               href="#"
-              className="rounded-md bg-[#a3ff00] px-3.5 py-2.5 text-black font-semibold m-3 mr-5 hover:bg-[#578508]"
+              className="rounded-md bg-[#a3ff00] px-3.5 py-2.5 text-black font-semibold m-3 mr-5"
             >
               Começar
-            </a>
-            <a
+            </motion.a>
+            <motion.a
+              whileTap={{ scale: 0.65 }}
               href="#"
               className="text-sm/6 font-semibold text-white m-3 pt-2 ml-5"
             >
               Sobre Nós <span aria-hidden="true">→</span>
-            </a>
+            </motion.a>
           </div>
-        </div>
+        </motion.div>
       </main>
       <div className="bg-black flex justify-center  md:pt-15 lg:pt-5 sm:pt-10 @container">
-        <div>
+        <motion.div
+          initial={{ scale: 0 }}
+          whileInView={{
+            scale: 1,
+            transition: {
+              duration: 0.5,
+            },
+          }}
+        >
           <h2 className="text-white text-[45px] font-semibold  @sm:text-center">
             Por que nos escolher
           </h2>
@@ -108,7 +146,8 @@ const App = () => {
                 ? "text-black-400"
                 : "text-gray-400"
               return (
-                <li
+                <motion.li
+                  whileTap={{ scale: 0.95 }}
                   key={item.id}
                   className={`${backgroundDynamic} w-70 m-3 rounded-xl cursor-pointer`}
                   onClick={() => setBenefit(item.id)}
@@ -119,11 +158,11 @@ const App = () => {
                     {item.title}
                   </h3>
                   <p className={`${textColorDynamic} px-5 pb-5`}>{item.text}</p>
-                </li>
+                </motion.li>
               )
             })}
           </ul>
-        </div>
+        </motion.div>
       </div>
       <div className="bg-black flex justify-center pt-15 @container">
         <div className="lg:w-[900px] lg:h-[800px] @3xl:w-[700px] @3xl:h-[700px] @sm:w-[350px] @sm:h-[600px] ">
@@ -132,7 +171,16 @@ const App = () => {
             src="about.jpg"
             className=" @3xl:w-[100%] @3xl:h-[350px] @sm:h-[250px] object-cover rounded-xl"
           />
-          <div className="flex">
+          <motion.div
+            initial={{ scale: 0 }}
+            whileInView={{
+              scale: 1,
+              transition: {
+                duration: 0.5,
+              },
+            }}
+            className="flex"
+          >
             <p className="text-gray-400 w-150 mt-7">
               Com anos de experiência, a{" "}
               <strong className="text-[#a3ff00]">Fit Genesis</strong> oferece um
@@ -140,8 +188,17 @@ const App = () => {
               qualificados para ajudar você a alcançar seus objetivos. Venha
               treinar com a gente e evoluir sempre!
             </p>
-          </div>
-          <div className="flex justify-center">
+          </motion.div>
+          <motion.div
+            initial={{ scale: 0 }}
+            whileInView={{
+              scale: 1,
+              transition: {
+                duration: 0.5,
+              },
+            }}
+            className="flex justify-center"
+          >
             <img
               src="about2.jpg"
               className="m-7 w-30 h-30 rounded-full object-cover border-4 border-[#a3ff00]"
@@ -150,7 +207,7 @@ const App = () => {
               src="about3.jpg"
               className="m-7 w-30 h-30 rounded-full object-cover border-4 border-[#a3ff00]"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
       <div className="bg-black flex flex-col justify-center pt-15 @container">
@@ -160,7 +217,14 @@ const App = () => {
         <ul className="flex justify-center m-5 flex-wrap">
           {plans.map((plan) => {
             return (
-              <li
+              <motion.li
+                initial={{ scale: 0 }}
+                whileInView={{
+                  scale: 1,
+                  transition: {
+                    duration: 0.5,
+                  },
+                }}
                 className=" @sm:w-100 @sm:h-115 @3xl:h-100  m-5 rounded-xl text-center p-5 border border-white "
                 key={plan.id}
               >
@@ -178,14 +242,15 @@ const App = () => {
                       {benefit}
                     </li>
                   ))}
-                  <button
+                  <motion.button
+                    whileTap={{ scale: 0.65, background: "#578508" }}
                     href="#"
-                    className="rounded-md bg-[#a3ff00] text-black font-semibold w-60 h-10 cursor-pointer hover:bg-[#578508]"
+                    className="rounded-md bg-[#a3ff00] text-black font-semibold w-60 h-10 cursor-pointer "
                   >
                     Começar
-                  </button>
+                  </motion.button>
                 </ul>
-              </li>
+              </motion.li>
             )
           })}
         </ul>
@@ -209,12 +274,12 @@ const App = () => {
             autoComplete="email"
             className="w-70 min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-[#a3ff00] sm:text-sm/6"
           />
-          <button
-            type="submit"
-            className="w-20 flex-none rounded-md bg-[#a3ff00] px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs hover:bg-[#578508] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 cursor-pointer"
+          <motion.button
+            whileTap={{ scale: 0.65, background: "#578508" }}
+            className="w-20 flex-none rounded-md bg-[#a3ff00] px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs  focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 cursor-pointer"
           >
             Enviar
-          </button>
+          </motion.button>
         </div>
       </footer>
     </>
