@@ -73,8 +73,8 @@ const App = () => {
         id="home"
         className="bg-[url(/public/home.jpg)] bg-cover h-dvh bg-center"
       >
-        <nav className="flex justify-center">
-          <ul className="flex justify-center">
+        <nav className="flex justify-center @container">
+          <ul className="justify-center @sm:hidden @md:flex @lg:flex">
             {links.map((link) => (
               <motion.li
                 initial="initial"
