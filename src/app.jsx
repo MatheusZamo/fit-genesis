@@ -87,7 +87,7 @@ const Home = () => {
   )
 }
 
-const App = () => {
+const WhyChooseUs = () => {
   const [benefit, setBenefit] = useState(1)
   const benefits = [
     {
@@ -106,6 +106,57 @@ const App = () => {
       id: 3,
     },
   ]
+
+  return (
+    <div
+      id="about"
+      className="bg-black flex justify-center  md:pt-15 lg:pt-5 sm:pt-10 @container"
+    >
+      <motion.div
+        initial={{ scale: 0 }}
+        whileInView={{
+          scale: 1,
+          transition: {
+            duration: 0.5,
+          },
+        }}
+      >
+        <h2 className="text-white text-[45px] font-semibold  @sm:text-center">
+          Por que nos escolher
+        </h2>
+        <ul className="flex flex-wrap justify-center">
+          {benefits.map((item) => {
+            const itemClicked = benefit === item.id
+            const backgroundDynamic = itemClicked
+              ? "bg-[#a3ff00]"
+              : "bg-gray-800"
+            const titleColorDynamic = itemClicked ? "text-black" : "text-white"
+            const textColorDynamic = itemClicked
+              ? "text-black-400"
+              : "text-gray-400"
+            return (
+              <motion.li
+                whileTap={{ scale: 0.95 }}
+                key={item.id}
+                className={`${backgroundDynamic} w-70 m-3 rounded-xl cursor-pointer`}
+                onClick={() => setBenefit(item.id)}
+              >
+                <h3
+                  className={`${titleColorDynamic} py-5 pl-5 text-xl font-black`}
+                >
+                  {item.title}
+                </h3>
+                <p className={`${textColorDynamic} px-5 pb-5`}>{item.text}</p>
+              </motion.li>
+            )
+          })}
+        </ul>
+      </motion.div>
+    </div>
+  )
+}
+
+const App = () => {
   const plans = [
     {
       name: "Plano Fit",
@@ -134,53 +185,7 @@ const App = () => {
   return (
     <>
       <Home />
-      <div
-        id="about"
-        className="bg-black flex justify-center  md:pt-15 lg:pt-5 sm:pt-10 @container"
-      >
-        <motion.div
-          initial={{ scale: 0 }}
-          whileInView={{
-            scale: 1,
-            transition: {
-              duration: 0.5,
-            },
-          }}
-        >
-          <h2 className="text-white text-[45px] font-semibold  @sm:text-center">
-            Por que nos escolher
-          </h2>
-          <ul className="flex flex-wrap justify-center">
-            {benefits.map((item) => {
-              const itemClicked = benefit === item.id
-              const backgroundDynamic = itemClicked
-                ? "bg-[#a3ff00]"
-                : "bg-gray-800"
-              const titleColorDynamic = itemClicked
-                ? "text-black"
-                : "text-white"
-              const textColorDynamic = itemClicked
-                ? "text-black-400"
-                : "text-gray-400"
-              return (
-                <motion.li
-                  whileTap={{ scale: 0.95 }}
-                  key={item.id}
-                  className={`${backgroundDynamic} w-70 m-3 rounded-xl cursor-pointer`}
-                  onClick={() => setBenefit(item.id)}
-                >
-                  <h3
-                    className={`${titleColorDynamic} py-5 pl-5 text-xl font-black`}
-                  >
-                    {item.title}
-                  </h3>
-                  <p className={`${textColorDynamic} px-5 pb-5`}>{item.text}</p>
-                </motion.li>
-              )
-            })}
-          </ul>
-        </motion.div>
-      </div>
+      <WhyChooseUs />
       <div className="bg-black flex justify-center pt-15 @container">
         <div className="lg:w-[900px] lg:h-[800px] @3xl:w-[700px] @3xl:h-[700px] @sm:w-[350px] @sm:h-[600px] ">
           <h2 className="text-white text-[45px] font-semibold">Sobre Nós</h2>
